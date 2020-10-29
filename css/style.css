@@ -820,6 +820,8 @@ html {
     display: none;
 }
 
+.mobmenu{display: none;}
+
 /*반응형(패드)*/
 
 @media (max-width:1279px) {
@@ -844,103 +846,140 @@ html {
     
 
     /*모바일 네비*/
+    #ust {
+  position: fixed;
+  height: 40px;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#ust #menuac {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  cursor: pointer;
+  padding: 19px 30px 20px 10px;
+}
+
+#ust #menuac span {
+  cursor: pointer;
+  height: 3px;
+  width: 23px;
+  background: #c9c9c9;
+  position: absolute;
+  display: block;
+  content: '';
+  transition: all 500ms ease-in-out;
+}
+
+#ust #menuac span:before {
+  cursor: pointer;
+  height: 3px;
+  width: 23px;
+  background: #c9c9c9;
+  position: absolute;
+  display: block;
+  content: '';
+  top: -7px;
+  transition: all 500ms ease-in-out;
+}
+
+#ust #menuac span:after {
+  cursor: pointer;
+  height: 3px;
+  width: 23px;
+  background: #c9c9c9;
+  position: absolute;
+  display: block;
+  content: '';
+  bottom: -7px;
+  transition: all 500ms ease-in-out;
+}
+
+#ust #menuac.acik span { background-color: transparent; }
+
+#ust #menuac.acik span:before {
+  top: 0px;
+  transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  bottom: 0;
+}
+
+#ust #menuac.acik span:after {
+  top: 0;
+  transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.mobmenu {
+  position: fixed;
+  left: -300px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  width: 300px;
+  height: 100%;
+  background: #a7b385;
+  z-index: 9;
+  display: block;
+}
+
+    .mobmenu a{font-size: 1.4rem;}
+.mobmenu.mobmenu-acik {
+  left: 0;
+  -webkit-box-shadow: 10px 0px 26px -16px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 0px 26px -16px rgba(0,0,0,0.75);
+  box-shadow: 10px 0px 26px -16px rgba(0,0,0,0.75);
+}
+
+.mobmenu ul.menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mobmenu ul.menu li a {
+  padding: 10px;
+  display: block;
+  list-style: none;
+  color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+#icerik {
+  padding: 50px 10px 10px 10px;
+  border: 1px solid #ddd;
+  height: 1000px;
+  background: #fff;
+}
+}
+
     
-    .top_white > .inner > .menu2 {
-    display: block}
-
-    .left_gnbWrap{display: block;}
-
-    .menu2{width:20px; height: 20px;
-           position: absolute;
-           top:50%; right: 5%;
-           background-image: url(../images/more.png);
-           background-repeat: no-repeat;
-           }
-    
-    a.close {
-        background-color: #fff;
-        width: 50px;
-        height: 50px;
-        position: absolute;
-        right: 0;
-        top: 0;
-        color: #000;
-        line-height: 50px;
-        text-align: center;}
-    
-    .close_i > img {margin-top: 10px;
-               width: 30px; height: 30px;}
-
-    .left_gnbWrap {
-        height: 100%;
-        width: 200px;
-        position: fixed;
-        right: -200px;
-        top: 0;
-        background-color: #fff;
-        padding-top: 50px;
-        z-index: 999;
-        transition: all 0.3s;
-    }
-
-    .left_gnbWrap.on {
-        right: 0;
-    }
-
-    .left_gnb > li {
-        width: 100%;
-    }
-
-    .left_gnb > li > a {
-        display: block;
-        text-align: center;
-        line-height: 50px;
-        width: 100%;
-        height: 50px;
-        font-size: 1.5rem;
-        background-color: #f1f1f1;
-        color: black;
-    }
-
-    .left_gnb > li > a.on {
-        background-color: #5eae64;
-        transition: 0.5s
-    }
-
-    .left_gnb > li > ul {
-        display: none;
-    }
-
-    .left_gnb > li > ul > li > a {
-        display: block;
-        text-align: center;
-        line-height: 50px;
-        width: 100%;
-        height: 50px;
-        font-size: 1.2rem;
-        background-color: #e7e7e7;
-        color: black;} 
-    
-    .left_gnb > li > ul > li > a:hover{background-color:#a3d391;
-                                    transition: 0.5s}
    
     /*메인이미지*/
     
-    .slides > li > img:nth-child(1){width: 100%;
+    .imgslide > a > img:nth-child(1){width: 100%;
                             background-repeat: no-repeat;
                             height: 0;
                             background-image: url(../images/img01_m.jpg);
                             background-size: cover;
                             padding-top: calc(690/768*100%)}
     
-    .slides >  li:nth-child(2) > img{width: 100%;
+    .imgslide > a:nth-child(2) > img{width: 100%;
                             background-repeat: no-repeat;
                             height: 0;
                             background-image: url(../images/img02_m.jpg);
                             background-size: cover;
                             padding-top: calc(700/768*100%)}
     
-    .slides > li:nth-child(3) > img{width: 100%;
+    .imgslide > a:nth-child(3) > img{width: 100%;
                             background-repeat: no-repeat;
                             height: 0;
                             background-image: url(../images/img03_m.jpg);
@@ -1143,7 +1182,7 @@ html {
 }
 
 @media (max-width:768px) {
-
+    
     /*메뉴바*/
     .top_box {
         width: 100%;
